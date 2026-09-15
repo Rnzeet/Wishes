@@ -1,38 +1,140 @@
-.App {
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at top, rgba(255, 187, 204, 0.8), transparent 35%),
+    linear-gradient(135deg, #fff7fb 0%, #ffe4ec 35%, #fce2ff 100%);
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.7;
+}
+
+.glow-one {
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 143, 179, 0.45);
+  top: 10%;
+  left: 12%;
+}
+
+.glow-two {
+  width: 340px;
+  height: 340px;
+  background: rgba(197, 145, 255, 0.4);
+  right: 10%;
+  bottom: 10%;
+}
+
+.invitation-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  padding: 42px 32px 30px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 24px 70px rgba(139, 92, 246, 0.24);
+  backdrop-filter: blur(12px);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heart-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: #ff5c8a;
+  font-size: 1.8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.24rem;
+  text-transform: uppercase;
+  color: #b25d85;
+  font-weight: 700;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: #4d2547;
+}
+
+.subtitle {
+  margin: 18px auto 28px;
+  max-width: 430px;
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: #6d445f;
+}
+
+.date-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+}
+
+.choice-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(190, 104, 155, 0.2);
+  box-shadow: 0 10px 30px rgba(214, 112, 167, 0.12);
+  font-weight: 600;
+  color: #60304d;
+}
+
+.choice-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff5c8a;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff7ca9 0%, #c78cff 100%);
   color: white;
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 16px 44px;
+  cursor: pointer;
+  box-shadow: 0 18px 34px rgba(206, 110, 173, 0.38);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 22px 38px rgba(206, 110, 173, 0.48);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .invitation-card {
+    padding: 32px 20px 26px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .choice-row {
+    width: 100%;
+    justify-content: center;
   }
 }

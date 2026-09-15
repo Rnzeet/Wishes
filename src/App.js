@@ -16,6 +16,16 @@ const questions = [
     question: 'Will you marry me in Future ?',
     options: ['A.Yes', 'B. Absolutely Yes', 'C. Koi Shak', 'D.Aj hi krlo'],
     correct: 'B'
+   },
+  {
+    question: 'When we went on our first date?',
+    options: ['A. 3 July 2026', 'B. 9 July 2026', 'C. 1 July 2026', 'D. 11 July 2026'],
+    correct: 'B'
+   },
+  {
+    question: 'eeeeeeeeeee kro?',
+    options: ['A.Ha', 'B. kar rha hu', 'C. abhi krunga', 'D.eeeeeeeeeeee'],
+    correct: 'B'
   }
 ];
 

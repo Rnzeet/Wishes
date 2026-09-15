@@ -20,19 +20,27 @@ const questions = [
 ];
 
 const floatingHearts = [
-  { left: '6%', top: '10%', size: 18, delay: '0s', duration: '12s' },
-  { left: '16%', top: '28%', size: 22, delay: '1.2s', duration: '16s' },
-  { left: '28%', top: '16%', size: 16, delay: '2.2s', duration: '14s' },
-  { left: '41%', top: '34%', size: 20, delay: '0.8s', duration: '15s' },
-  { left: '52%', top: '22%', size: 24, delay: '3s', duration: '18s' },
-  { left: '64%', top: '14%', size: 18, delay: '1.7s', duration: '13s' },
-  { left: '76%', top: '30%', size: 26, delay: '0.4s', duration: '17s' },
-  { left: '87%', top: '12%', size: 18, delay: '2.8s', duration: '15s' },
-  { left: '14%', top: '72%', size: 20, delay: '1.4s', duration: '16s' },
-  { left: '32%', top: '78%', size: 22, delay: '2.5s', duration: '18s' },
-  { left: '48%', top: '68%', size: 16, delay: '0.9s', duration: '14s' },
-  { left: '68%', top: '80%', size: 24, delay: '1.8s', duration: '17s' },
-  { left: '84%', top: '74%', size: 18, delay: '3.1s', duration: '15s' }
+  { left: '4%', top: '8%', size: 18, delay: '0s', duration: '12s' },
+  { left: '10%', top: '20%', size: 20, delay: '1s', duration: '15s' },
+  { left: '18%', top: '14%', size: 16, delay: '2.4s', duration: '13s' },
+  { left: '24%', top: '32%', size: 22, delay: '0.8s', duration: '17s' },
+  { left: '32%', top: '18%', size: 18, delay: '3s', duration: '16s' },
+  { left: '38%', top: '42%', size: 24, delay: '1.6s', duration: '18s' },
+  { left: '50%', top: '12%', size: 20, delay: '2.1s', duration: '14s' },
+  { left: '58%', top: '26%', size: 26, delay: '0.4s', duration: '19s' },
+  { left: '68%', top: '16%', size: 18, delay: '2.8s', duration: '15s' },
+  { left: '76%', top: '36%', size: 22, delay: '1.2s', duration: '17s' },
+  { left: '84%', top: '18%', size: 16, delay: '3.4s', duration: '13s' },
+  { left: '92%', top: '28%', size: 20, delay: '0.7s', duration: '15s' },
+  { left: '8%', top: '58%', size: 20, delay: '1.8s', duration: '16s' },
+  { left: '18%', top: '72%', size: 22, delay: '0.6s', duration: '18s' },
+  { left: '28%', top: '64%', size: 18, delay: '2.7s', duration: '15s' },
+  { left: '36%', top: '82%', size: 24, delay: '1.5s', duration: '17s' },
+  { left: '48%', top: '70%', size: 16, delay: '0.9s', duration: '14s' },
+  { left: '58%', top: '80%', size: 22, delay: '3s', duration: '18s' },
+  { left: '70%', top: '68%', size: 18, delay: '1.3s', duration: '16s' },
+  { left: '80%', top: '78%', size: 24, delay: '2.2s', duration: '19s' },
+  { left: '90%', top: '60%', size: 18, delay: '3.6s', duration: '15s' }
 ];
 
 const fireworks = [

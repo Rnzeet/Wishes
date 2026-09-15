@@ -19,12 +19,44 @@ const questions = [
   }
 ];
 
+const floatingHearts = [
+  { left: '6%', top: '10%', size: 18, delay: '0s', duration: '12s' },
+  { left: '16%', top: '28%', size: 22, delay: '1.2s', duration: '16s' },
+  { left: '28%', top: '16%', size: 16, delay: '2.2s', duration: '14s' },
+  { left: '41%', top: '34%', size: 20, delay: '0.8s', duration: '15s' },
+  { left: '52%', top: '22%', size: 24, delay: '3s', duration: '18s' },
+  { left: '64%', top: '14%', size: 18, delay: '1.7s', duration: '13s' },
+  { left: '76%', top: '30%', size: 26, delay: '0.4s', duration: '17s' },
+  { left: '87%', top: '12%', size: 18, delay: '2.8s', duration: '15s' },
+  { left: '14%', top: '72%', size: 20, delay: '1.4s', duration: '16s' },
+  { left: '32%', top: '78%', size: 22, delay: '2.5s', duration: '18s' },
+  { left: '48%', top: '68%', size: 16, delay: '0.9s', duration: '14s' },
+  { left: '68%', top: '80%', size: 24, delay: '1.8s', duration: '17s' },
+  { left: '84%', top: '74%', size: 18, delay: '3.1s', duration: '15s' }
+];
+
+const fireworks = [
+  { left: '12%', top: '18%', size: 12, color: '#ff89b7', delay: '0s' },
+  { left: '25%', top: '30%', size: 10, color: '#ffd166', delay: '0.3s' },
+  { left: '38%', top: '20%', size: 16, color: '#ff7b9c', delay: '0.5s' },
+  { left: '52%', top: '28%', size: 12, color: '#b794ff', delay: '0.8s' },
+  { left: '66%', top: '18%', size: 14, color: '#7ee7c9', delay: '0.2s' },
+  { left: '82%', top: '35%', size: 10, color: '#ffb5d8', delay: '0.6s' },
+  { left: '18%', top: '58%', size: 11, color: '#74d4ff', delay: '0.7s' },
+  { left: '34%', top: '70%', size: 15, color: '#ff9ec8', delay: '0.4s' },
+  { left: '48%', top: '66%', size: 13, color: '#ffd166', delay: '0.9s' },
+  { left: '63%', top: '58%', size: 12, color: '#d9a6ff', delay: '0.1s' },
+  { left: '78%', top: '70%', size: 10, color: '#7ee7c9', delay: '0.5s' },
+  { left: '88%', top: '52%', size: 16, color: '#ff89b7', delay: '0.8s' }
+];
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showQuestions, setShowQuestions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [score, setScore] = useState(0);
   const [resultOpen, setResultOpen] = useState(false);
+  const [celebrationOpen, setCelebrationOpen] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,8 +85,33 @@ function App() {
     setResultOpen(true);
   };
 
+  const handleCloseResult = () => {
+    setResultOpen(false);
+    setCelebrationOpen(true);
+  };
+
   return (
     <main className="page-shell">
+      <div className="floating-hearts" aria-hidden="true">
+        {floatingHearts.map((heart, index) => (
+          <span
+            key={index}
+            className="floating-heart"
+            style={{
+              left: heart.left,
+              top: heart.top,
+              width: `${heart.size}px`,
+              height: `${heart.size}px`,
+              animationDelay: heart.delay,
+              animationDuration: heart.duration,
+              opacity: 0.7
+            }}
+          >
+            ♥
+          </span>
+        ))}
+      </div>
+
       {!showQuestions ? (
         <section className="invitation-card">
           <div className="heart-row" aria-label="Love decoration">
@@ -141,18 +198,47 @@ function App() {
         </div>
       )}
 
-      {resultOpen && (
+      {resultOpen && !celebrationOpen && (
         <div className="modal-backdrop" role="presentation">
           <div className="modal-card result-card" role="dialog" aria-modal="true" aria-labelledby="result-title">
             <div className="result-badge" aria-hidden="true">
               ♥
             </div>
-           
+
             <h2 id="result-title">Out of {questions.length}, you have scored {score}</h2>
             <p className="congrats-text">Congratulations!</p>
-            <button type="button" className="go-ahead-button" onClick={() => setResultOpen(false)}>
+            <button type="button" className="go-ahead-button" onClick={handleCloseResult}>
               Close
             </button>
+          </div>
+        </div>
+      )}
+
+      {celebrationOpen && (
+        <div className="celebration-screen" role="presentation">
+          <div className="fireworks-layer" aria-hidden="true">
+            {fireworks.map((firework, index) => (
+              <span
+                key={index}
+                className="firework"
+                style={{
+                  left: firework.left,
+                  top: firework.top,
+                  width: `${firework.size}px`,
+                  height: `${firework.size}px`,
+                  background: firework.color,
+                  animationDelay: firework.delay,
+                  boxShadow: `0 0 18px ${firework.color}`
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="celebration-content">
+            <div className="celebration-heart" aria-hidden="true">♥</div>
+            <p className="celebration-tag">A promise</p>
+            <h2>Our forever starts here</h2>
+            <p className="celebration-text">You are my favorite person, my softest peace, and my dream come true.</p>
           </div>
         </div>
       )}

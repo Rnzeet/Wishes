@@ -27,4 +27,8 @@ test('renders the date invitation question and opens the follow-up popup and que
 
   expect(screen.getByText(/out of 3, you have scored 3/i)).toBeInTheDocument();
   expect(screen.getByText(/congratulations!/i)).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole('button', { name: /close/i }));
+
+  expect(screen.getByText(/our forever starts here/i)).toBeInTheDocument();
 });

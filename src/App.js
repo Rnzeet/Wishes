@@ -16,7 +16,6 @@ const questions = [
     question: 'Will you marry me in Future ?',
     options: ['A.Yes', 'B. Absolutely Yes', 'C. Koi Shak', 'D.Aj hi krlo'],
     correct: 'B'
-
   }
 ];
 
@@ -145,7 +144,10 @@ function App() {
       {resultOpen && (
         <div className="modal-backdrop" role="presentation">
           <div className="modal-card result-card" role="dialog" aria-modal="true" aria-labelledby="result-title">
-            <p className="modal-tag">Your result</p>
+            <div className="result-badge" aria-hidden="true">
+              ♥
+            </div>
+           
             <h2 id="result-title">Out of {questions.length}, you have scored {score}</h2>
             <p className="congrats-text">Congratulations!</p>
             <button type="button" className="go-ahead-button" onClick={() => setResultOpen(false)}>

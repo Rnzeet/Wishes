@@ -150,7 +150,7 @@ function App() {
               <span>Yes, I’d love to</span>
             </label>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Haa</button>
           </form>
         </section>
       ) : (
@@ -226,7 +226,7 @@ function App() {
             <h2 id="result-title">Out of {questions.length}, you have scored {score}</h2>
             <p className="congrats-text">Congratulations!</p>
             <button type="button" className="go-ahead-button" onClick={handleCloseResult}>
-              Close
+              Chalo 
             </button>
           </div>
         </div>
